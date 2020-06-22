@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--header-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 text-center font-weight-bold">Weather Dashboard</h1>
+        </div>
+    </div>
+
+    <!--search bar and recent searches-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <h2>Search for a City:</h2>
+                <!--make nav go flush to the end-->
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" id="citySearch" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" id="addCity" type="submit">City...</button>
+                    </form>
+                    <!--make list go flush to the end-->
+                    <div class="card d-flex p-2" style="width: 18rem;">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item">Dapibus ac facilisis in</li>
+                          <li class="list-group-item">Vestibulum at eros</li>
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item">Dapibus ac facilisis in</li>
+                          <li class="list-group-item">Vestibulum at eros</li>
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item">Dapibus ac facilisis in</li>
+                        </ul>
+                      </div>
+                </nav>
+            </div>
+            <div class="col-9">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body">
+                            <!--will need to create class/id to link searched city ino h5, info into each of the subsequent rows-->
+                            <!--<h2 class="card-title">Current City</h2>-->
+                            <div class="city"></div>
+                            <br>
+                            <div class="temp"></div>
+                            <br>
+                            <div class="humidity"></div>
+                            <br>
+                            <div class="wind"></div>
+                            <br>
+                            <div class="uv"></div>
+                            <!--<p class="card-text">Temperature:</p>
+                            <br>
+                            <p>Humidity:</p>
+                            <br>
+                            <p>Wind Speed:</p>
+                            <br>
+                            <p>UV index:</p>-->
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <h2>5-Day Forecast</h2>
+                    <div class="card-deck pr-2">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title" id="day1"></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title" id="day2"></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title" id="day3"></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title" id="day4"></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title" id="day5"></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--weather api-->
+   
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script> -->
