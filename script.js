@@ -2,12 +2,10 @@
 var cityName = "Seattle"
 var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=2acfaadbcdceb6ac258c5d746dd4e2a2";
 var currentDate = moment().format("MM/DD/YYYY");
+//var cityArray = JSON.parse(localStorage.getItem("cityData")) || [];
 
-//var currentDate = moment().year(year).month(month).date(date);
-
-//$("#day1").append(currentDate)
-
-
+//renderSearchHistory();
+//function renderData(cityName){
 $.ajax({
     url: queryURL,
     method: "GET"
@@ -47,28 +45,34 @@ $.ajax({
         $("#day" + [i] + "temp").append(response.list[i].main.temp + "°F");
         $("#day" + [i] + "humid").text("Humidity: " + response.list[i].main.humidity + "%");
     }
-});
+})
+//};
 
+//function renderSearchHistory() {
+    //$("#cityList").empty();
 
+    //for (let i=0; i < cityArray.length; i++) {
+        //var newLi = $("<li>");
 
+        //newLi.addClass("list-group-item");
+        //newLi.attr("id", ("city" + [i]))
+        //newLi.text(cityArray[i]);
 
+        //$("#cityList").append(newLi)
+        //$("#city"+[i]).on("click", function (event){
+            //var citySearch = (cityArray[i])
 
+            //renderData(citySearch)
+        //})
+   // }
+//}
 
+//$("#searchBtn").on("click", function(event){
+    //event.preventDefault();
 
+    //var citySearch = $("#citySearch").val().trim();
 
-
-
-
-  //connecting city search to page
-
-  //function search(){
-    //  var cityNameg
-  //}
-
- // function renderButtons(){
-      //for (var i=0; i<8; i++){
-          //var a=$("<button>");
-          //a.addClass("city");
-          //a.attr("")
-    //  }
-  //}
+    //cityArray.push(citySearch);
+    //localStorage.setItem("cityData", JSON.stringify(cityArray))
+    //renderSearchHistory();
+//})
